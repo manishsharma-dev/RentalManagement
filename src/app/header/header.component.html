@@ -1,0 +1,40 @@
+<mat-toolbar class="appHeader">
+  
+  <div class="container-fluid">
+    <div class="row">
+        <div class="col-8" >{{headerTitle}}</div>
+        <div class="col-4" >
+          <nav class="navbar navbar-expand-md navbar-light bg-dark">          
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+              <ul class="navbar-nav">                
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle"
+                   href="http://example.com"
+                    id="navbarDropdownMenuLink" 
+                    data-toggle="dropdown" 
+                    aria-haspopup="true" 
+                    aria-expanded="false">
+                    Dropdown
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                   
+                    <li class="dropdown-submenu" *ngFor="let menu of menuItems">
+                      <a class="dropdown-item dropdown-toggle" 
+                      [routerLink]="['branchcategory', menu.dealers_id]" >{{menu.name}}</a>
+                      <ul class="dropdown-menu">
+                        <li *ngFor="let branch of menu.branches">
+                          <a class="dropdown-item" 
+                          [routerLink]="['category', branch.branch_id]">{{branch.name}}</a></li>   
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </nav>
+      </div>
+    </div>
+  </div>
+   
+</mat-toolbar>
+

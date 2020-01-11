@@ -1,0 +1,16 @@
+<div class="container h-100">
+    <div class="row h-100 justify-content-center align-items-center">
+        <ng-container *ngFor="let subCategory of subCategoryList">
+            <mat-card class="card" *ngIf="subCategory.image!=undefined">    
+                <span >
+                    <img mat-card-image [src]="'assets/Images/category/subcategory/'+subCategory.image" [alt] ="subCategory.name"> 
+                </span>
+                <mat-card-actions color="primary">
+                    <div class="col-12" class="footerBar">
+                        <a class="categoryName" >{{subCategory.name}}</a>
+                    </div>                  
+                </mat-card-actions>
+              </mat-card>
+        </ng-container>   
+    </div>  
+  </div>
